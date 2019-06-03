@@ -31,13 +31,18 @@ private const val ARG_PARAM2 = "param2"
  */
 class fragmento_detalle : Fragment() {
     // TODO: Rename and change types of parameters
+    private var param1: String? = null
+    private var param2: String? = null
     var match :  Match? = null
     private var listener: OnFragmentInteractionListener? = null
 
-    private lateinit var matchViewModel: MatchViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        arguments?.let {
+            param1 = it.getString(ARG_PARAM1)
+            param2 = it.getString(ARG_PARAM2)
+        }
 
     }
 
@@ -45,7 +50,7 @@ class fragmento_detalle : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_fragmento_lista,container,false)
+        val view = inflater.inflate(R.layout.fragment_fragmento_detalle,container,false)
         view.apply {
             tv_equipo1_result.text= match?.team1
             tv_equipo2_result.text= match?.team2
@@ -62,7 +67,9 @@ class fragmento_detalle : Fragment() {
             }
 
         }
+        return view
     }
+
 
 
 
@@ -94,6 +101,7 @@ class fragmento_detalle : Fragment() {
     interface OnFragmentInteractionListener {
         fun onClickLisElement(match: Match)
         fun onClickScores(match:Match)
+        fun onClickListElementLand(match: Match)
     }
 
     companion object {
@@ -109,8 +117,9 @@ class fragmento_detalle : Fragment() {
         @JvmStatic
         fun newInstance(match:Match):fragmento_detalle{
             var fragment = fragmento_detalle()
+            fragment.match = match
             return fragment
         }
-            }
     }
 }
+

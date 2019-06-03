@@ -6,7 +6,7 @@
              tools:context=".activities.fragmentos.fragmento_lista">
 
     <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_book_list"
+            android:id="@+id/rv_partidos_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:listitem="@layout/partido_item"

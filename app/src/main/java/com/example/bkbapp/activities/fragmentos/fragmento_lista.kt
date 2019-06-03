@@ -1,6 +1,7 @@
 package com.example.bkbapp.activities.fragmentos
 
 import android.content.Context
+import android.content.res.Configuration
 import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -60,12 +61,21 @@ class fragmento_lista : Fragment() {
 
     fun initRecyclerView(view : View){
         val linearLayoutManager = LinearLayoutManager(this.context)
-        matchAdapter = Recycler_adapter({match : Match -> listener?.onClickLisElement(match)})
-        view.rv_book_list.adapter = matchAdapter as Recycler_adapter
+
+        if(resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT){
+            matchAdapter = Recycler_adapter({match : Match -> listener?.onClickLisElement(match)})
+        }
+        if(resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE){
+            matchAdapter = Recycler_adapter({match : Match -> listener?.onClickLisElementLand(match)})
+        }
+
+        view.rv_partidos_list.adapter = matchAdapter
+
         matchViewModel.getAll().observe(this, Observer { datos ->
             datos?.let{matchAdapter.setPartidos(it)}
         })
-        view.rv_book_list.apply {
+
+        view.rv_partidos_list.apply {
             setHasFixedSize(true)
             layoutManager = linearLayoutManager
         }
@@ -101,6 +111,7 @@ class fragmento_lista : Fragment() {
     interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         fun onClickLisElement(match: Match)
+        fun onClickLisElementLand(match: Match)
         fun onClickScores(match:Match)
     }
 
