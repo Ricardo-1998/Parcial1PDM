@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fadingEdge="horizontal|vertical" app:cardCornerRadius="10dp" app:cardBackgroundColor="#00F3F3F3">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:background="#D25F3434"
+    >
+        <TextView
+                android:text="Equipo1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_equipo1_card" app:layout_constraintStart_toEndOf="@+id/imageView5"
+                android:layout_marginLeft="24dp" android:layout_marginStart="24dp" android:layout_marginTop="16dp"
+                app:layout_constraintTop_toTopOf="parent"/>
+        <ImageView
+                android:layout_width="62dp"
+                android:layout_height="59dp" app:srcCompat="@drawable/bkb_icon"
+                android:id="@+id/imageView5"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.156"/>
+        <ImageView
+                android:layout_width="62dp"
+                android:layout_height="59dp" app:srcCompat="@drawable/bkb_icon"
+                android:id="@+id/imageView6" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.152"
+                android:layout_marginEnd="20dp" android:layout_marginRight="20dp"/>
+        <TextView
+                android:text="Equipo2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_equipo2_card" app:layout_constraintStart_toEndOf="@+id/tv_equipo1_card"
+                android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/imageView6" android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp" android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.714"
+                app:layout_constraintVertical_bias="0.111"/>
+        <TextView
+                android:text="0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_point1_card"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:textSize="20sp" app:layout_constraintEnd_toStartOf="@+id/tv_point2_card"
+                android:layout_marginEnd="100dp" android:layout_marginRight="100dp"
+                app:layout_constraintStart_toEndOf="@+id/imageView5" android:layout_marginLeft="48dp"
+                android:layout_marginStart="48dp" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/tv_equipo1_card" app:layout_constraintHorizontal_bias="0.46"
+                app:layout_constraintVertical_bias="0.0"/>
+        <TextView
+                android:text="0"
+                android:layout_width="13dp"
+                android:layout_height="24dp"
+                android:id="@+id/tv_point2_card"
+                app:layout_constraintTop_toBottomOf="@+id/tv_equipo2_card"
+                app:layout_constraintEnd_toStartOf="@+id/imageView6" android:layout_marginEnd="48dp"
+                android:layout_marginRight="48dp" android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.0"
+                android:textSize="20sp" android:layout_marginTop="8dp"/>
+        <TextView
+                android:text="dd/mm/yy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_fecha_card"
+                app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/imageView5"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp" app:layout_constraintVertical_bias="0.39"/>
+        <TextView
+                android:text="12:00"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_hora_card" app:layout_constraintStart_toEndOf="@+id/tv_fecha_card"
+                android:layout_marginStart="20dp" android:layout_marginLeft="20dp"
+                app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/tv_point1_card"
+                app:layout_constraintVertical_bias="0.31"
+                android:layout_marginEnd="8dp" app:layout_constraintEnd_toStartOf="@+id/tv_ganador_card"
+                android:layout_marginRight="8dp" app:layout_constraintHorizontal_bias="0.057"/>
+        <TextView
+                android:text="winner:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_ganador_card" android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="32dp" android:layout_marginRight="32dp" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/imageView6" app:layout_constraintVertical_bias="0.7"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
